@@ -128,7 +128,6 @@ class CreateEventViewController : UIViewController,UIPickerViewDelegate,UIPicker
         {
             CoreDataHelper.deleteEvent(event: delEvent)
         }
-        //CoreDataHelper.deleteEvent(event: )
     }
     
     func getToBeDeleteEvent(events: [Event]) -> [Event]

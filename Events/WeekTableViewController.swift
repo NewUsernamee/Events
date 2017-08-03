@@ -65,21 +65,123 @@ class WeekTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DayCell", for: indexPath) as! DayCell
 
         // Configure the cell...
+        //let color = UIColor(patternImage: UIImage(named:"Line.png")!)
+        //let separator
         switch dispArr[indexPath.row].eventDay {
         case 0:
             cell.dayLabel.text = "Mon"
+            cell.eventNameLabel.textColor = UIColor(red: 60.0/255.0,
+                                                    green: 12.0/255.0,
+                                                    blue: 4.0/255.0,
+                                                    alpha: 1.0)
+            
+            cell.dayLabel.textColor = UIColor(red: 255.0/255.0,
+                                              green: 79.0/255.0,
+                                              blue: 53.0/255.0,
+                                              alpha: 1.0)
+            
+            cell.backgroundColor = UIColor(red: 255.0/255.0,
+                                           green: 255.0/255.0,
+                                           blue: 255.0/255.0,
+                                           alpha: 1.0)
         case 1:
             cell.dayLabel.text = "Tue"
+            cell.eventNameLabel.textColor = UIColor(red: 60.0/255.0,
+                                                    green: 41.0/255.0,
+                                                    blue: 4.0/255.0,
+                                                    alpha: 1.0)
+            
+            cell.dayLabel.textColor = UIColor(red: 255.0/255.0,
+                                              green: 194.0/255.0,
+                                              blue: 53.0/255.0,
+                                              alpha: 1.0)
+            
+            cell.backgroundColor = UIColor(red: 255.0/255.0,
+                                           green: 255.0/255.0,
+                                           blue: 255.0/255.0,
+                                           alpha: 1.0)
         case 2:
             cell.dayLabel.text = "Wed"
+            cell.eventNameLabel.textColor = UIColor(red: 61.0/255.0,
+                                                    green: 56.0/255.0,
+                                                    blue: 1.0/255.0,
+                                                    alpha: 1.0)
+            
+            cell.dayLabel.textColor = UIColor(red: 242.0/255.0,
+                                              green: 237.0/255.0,
+                                              blue: 11.0/255.0,
+                                              alpha: 1.0)
+            
+            cell.backgroundColor = UIColor(red: 255.0/255.0,
+                                           green: 255.0/255.0,
+                                           blue: 255.0/255.0,
+                                           alpha: 1.0)
         case 3:
-            cell.dayLabel.text = "Thu"
+            cell.dayLabel.text = "Thur"
+            cell.eventNameLabel.textColor = UIColor(red: 27.0/255.0,
+                                                    green: 60.0/255.0,
+                                                    blue: 4.0/255.0,
+                                                    alpha: 1.0)
+            
+            cell.dayLabel.textColor = UIColor(red: 123.0/255.0,
+                                              green: 239.0/255.0,
+                                              blue: 46.0/255.0,
+                                              alpha: 1.0)
+            
+            cell.backgroundColor = UIColor(red: 255.0/255.0,
+                                           green: 255.0/255.0,
+                                           blue: 255.0/255.0,
+                                           alpha: 1.0)
         case 4:
             cell.dayLabel.text = "Fri"
+            cell.eventNameLabel.textColor = UIColor(red: 1.0/255.0,
+                                                    green: 48.0/255.0,
+                                                    blue: 63.0/255.0,
+                                                    alpha: 1.0)
+            
+            cell.dayLabel.textColor = UIColor(red: 49.0/255.0,
+                                              green: 202.0/255.0,
+                                              blue: 253.0/255.0,
+                                              alpha: 1.0)
+            
+            cell.backgroundColor = UIColor(red: 255.0/255.0,
+                                           green: 255.0/255.0,
+                                           blue: 255.0/255.0,
+                                           alpha: 1.0)
         case 5:
             cell.dayLabel.text = "Sat"
+            ///cell.dayLabel.text = "Fri"
+            cell.eventNameLabel.textColor = UIColor(red: 17.0/255.0,
+                                                    green: 1.0/255.0,
+                                                    blue: 63.0/255.0,
+                                                    alpha: 1.0)
+            
+            cell.dayLabel.textColor = UIColor(red: 105.0/255.0,
+                                              green: 55.0/255.0,
+                                              blue: 253.0/255.0,
+                                              alpha: 1.0)
+            
+            cell.backgroundColor = UIColor(red: 255.0/255.0,
+                                           green: 255.0/255.0,
+                                           blue: 255.0/255.0,
+                                           alpha: 1.0)
         case 6:
             cell.dayLabel.text = "Sun"
+            //cell.dayLabel.text = "Fri"
+            cell.eventNameLabel.textColor = UIColor(red: 64.0/255.0,
+                                                    green: 0.0/255.0,
+                                                    blue: 29.0/255.0,
+                                                    alpha: 1.0)
+            
+            cell.dayLabel.textColor = UIColor(red: 255.0/255.0,
+                                              green: 36.0/255.0,
+                                              blue: 135.0/255.0,
+                                              alpha: 1.0)
+            
+            cell.backgroundColor = UIColor(red: 255.0/255.0,
+                                           green: 255.0/255.0,
+                                           blue: 255.0/255.0,
+                                           alpha: 1.0)
         default:
             print("error")
         }
@@ -142,27 +244,23 @@ class WeekTableViewController: UITableViewController {
 
     func getEventStartTime(event: Event) -> Int
     {
-        var time = 0
         for dispEvent in dispArr
         {
             if dispEvent.eventName == event.eventName
             {
-                return time
+                return Int(dispEvent.eventDay)
             }
-            time+=1
         }
         return 0
     }
     func getEventEndTime(event: Event) -> Int
     {
-        var time = 0
         var rtn = 0
         for dispEvent in dispArr
         {
             if dispEvent.eventName == event.eventName
             {
-                rtn = time
-                time+=1
+                rtn = Int(dispEvent.eventDay)
             }
             
         }
