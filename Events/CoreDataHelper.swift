@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Make School. All rights reserved.
 //
 
-import Foundation
+//import Foundation
 import Foundation
 import CoreData
 import UIKit
