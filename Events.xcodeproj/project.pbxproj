@@ -10,6 +10,8 @@
 		C00EB55F1F31AC65005828A9 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00EB55E1F31AC65005828A9 /* DayCell.swift */; };
 		C015C6F31F302DE600F968B0 /* Events.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C015C6F11F302DE600F968B0 /* Events.xcdatamodeld */; };
 		C015C6F51F302EB800F968B0 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C015C6F41F302EB800F968B0 /* CoreDataHelper.swift */; };
+		C04770B01F341C940056FC46 /* eventListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04770AF1F341C940056FC46 /* eventListTableViewController.swift */; };
+		C04770B21F341EB70056FC46 /* eventListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04770B11F341EB70056FC46 /* eventListCell.swift */; };
 		C05D667D1F2F00DD007F21C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05D667C1F2F00DD007F21C9 /* AppDelegate.swift */; };
 		C05D667F1F2F00DD007F21C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05D667E1F2F00DD007F21C9 /* ViewController.swift */; };
 		C05D66821F2F00DD007F21C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C05D66801F2F00DD007F21C9 /* Main.storyboard */; };
@@ -23,6 +25,8 @@
 		C00EB55E1F31AC65005828A9 /* DayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		C015C6F21F302DE600F968B0 /* Events.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Events.xcdatamodel; sourceTree = "<group>"; };
 		C015C6F41F302EB800F968B0 /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		C04770AF1F341C940056FC46 /* eventListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventListTableViewController.swift; sourceTree = "<group>"; };
+		C04770B11F341EB70056FC46 /* eventListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventListCell.swift; sourceTree = "<group>"; };
 		C05D66791F2F00DD007F21C9 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05D667C1F2F00DD007F21C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C05D667E1F2F00DD007F21C9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 				C05D66901F2F150E007F21C9 /* WeekTableViewController.swift */,
 				C00EB55E1F31AC65005828A9 /* DayCell.swift */,
 				C05D66BA1F2F3111007F21C9 /* CreateEventViewController.swift */,
+				C04770AF1F341C940056FC46 /* eventListTableViewController.swift */,
+				C04770B11F341EB70056FC46 /* eventListCell.swift */,
 			);
 			name = TableView;
 			sourceTree = "<group>";
@@ -163,7 +169,9 @@
 				C015C6F31F302DE600F968B0 /* Events.xcdatamodeld in Sources */,
 				C05D66911F2F150E007F21C9 /* WeekTableViewController.swift in Sources */,
 				C015C6F51F302EB800F968B0 /* CoreDataHelper.swift in Sources */,
+				C04770B21F341EB70056FC46 /* eventListCell.swift in Sources */,
 				C05D667F1F2F00DD007F21C9 /* ViewController.swift in Sources */,
+				C04770B01F341C940056FC46 /* eventListTableViewController.swift in Sources */,
 				C00EB55F1F31AC65005828A9 /* DayCell.swift in Sources */,
 				C05D667D1F2F00DD007F21C9 /* AppDelegate.swift in Sources */,
 				C05D66BB1F2F3111007F21C9 /* CreateEventViewController.swift in Sources */,

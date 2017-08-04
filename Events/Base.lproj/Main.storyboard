@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mgo-nb-ix1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Zs3-sM-OTD">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,16 +13,16 @@
         <scene sceneID="wDR-4G-oA7">
             <objects>
                 <tableViewController id="0wm-mI-3hH" customClass="WeekTableViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" id="bQs-xe-8Mv">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" id="bQs-xe-8Mv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayCell" rowHeight="65" id="Xb7-8H-6dA" customClass="DayCell" customModule="Events" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="65"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DayCell" rowHeight="50" id="Xb7-8H-6dA" customClass="DayCell" customModule="Events" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xb7-8H-6dA" id="3gF-UR-I5N">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="64.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjH-KP-cJW" userLabel="Event Name Label">
@@ -41,6 +41,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dayLabel" destination="wUT-aP-HEF" id="KBT-6E-lIp"/>
                                     <outlet property="eventNameLabel" destination="bjH-KP-cJW" id="QN7-7U-I4w"/>
@@ -54,6 +55,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Events" id="UVG-sA-2AC">
+                        <barButtonItem key="backBarButtonItem" title="DashBoard" id="FAu-yj-lYu"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="u06-Sp-yod">
+                            <connections>
+                                <segue destination="vwB-1B-cef" kind="unwind" unwindAction="unwindToCreateEventViewController:" id="41a-6m-pOi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rMl-te-wRV">
                             <connections>
                                 <segue destination="nvD-DJ-FSe" kind="show" identifier="createEvent" id="Trq-H4-u92"/>
@@ -62,8 +69,9 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z92-hK-U8e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vwB-1B-cef" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2617.5" y="-485.91549295774649"/>
+            <point key="canvasLocation" x="4612.5" y="-485.91549295774649"/>
         </scene>
         <!--Create Event View Controller-->
         <scene sceneID="REf-Oi-UEe">
@@ -77,44 +85,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="9CO-bf-l6r" userLabel="Event Name Text Field">
-                                <rect key="frame" x="146" y="92" width="114" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <textInputTraits key="textInputTraits" spellCheckingType="yes" keyboardAppearance="alert"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="From" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u01-Sb-gZN" userLabel="From Label">
-                                <rect key="frame" x="52" y="150" width="58" height="21"/>
+                                <rect key="frame" x="45" y="144" width="58" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qn6-Ck-tFi" userLabel="To Label">
-                                <rect key="frame" x="52" y="218" width="58" height="21"/>
+                                <rect key="frame" x="45" y="195" width="58" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0BX-zm-y4M" userLabel="Create Event Button">
-                                <rect key="frame" x="99" y="263" width="98" height="43"/>
+                                <rect key="frame" x="82" y="263" width="157" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save Changes"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="Save Changes">
+                                    <color key="titleColor" red="1" green="0.30980392156862746" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="Vor-MY-dxX" kind="unwind" identifier="createEvent" unwindAction="unwindToCreateEventViewController:" id="1dU-fB-wNL"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ae9-BA-MAq" userLabel="Event Name Label">
-                                <rect key="frame" x="59" y="95" width="51" height="21"/>
+                                <rect key="frame" x="51" y="79" width="66" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ICd-Zp-lzx" userLabel="End Day Picker View">
-                                <rect key="frame" x="143" y="203" width="120" height="50"/>
+                                <rect key="frame" x="133" y="180" width="120" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="nvD-DJ-FSe" id="RPr-Vo-8qN"/>
@@ -122,15 +128,23 @@
                                 </connections>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NKZ-Mu-i1q" userLabel="Start Day Picker View">
-                                <rect key="frame" x="143" y="135" width="120" height="50"/>
+                                <rect key="frame" x="133" y="129" width="120" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="nvD-DJ-FSe" id="PpW-qe-LU6"/>
                                     <outlet property="delegate" destination="nvD-DJ-FSe" id="7hU-w9-78B"/>
                                 </connections>
                             </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="9CO-bf-l6r" userLabel="Event Name Text Field">
+                                <rect key="frame" x="125" y="86" width="164" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="yes" keyboardAppearance="alert"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="IWc-9b-HIc">
@@ -142,6 +156,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="createButton" destination="0BX-zm-y4M" id="tH7-Bb-kI7"/>
                         <outlet property="endTimePicker" destination="ICd-Zp-lzx" id="Iml-f9-5Ob"/>
                         <outlet property="eventNameLabel" destination="ae9-BA-MAq" id="GIY-Pq-uaa"/>
                         <outlet property="eventNameTextField" destination="9CO-bf-l6r" id="hbB-Qv-det"/>
@@ -152,25 +167,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bqa-wJ-oaQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Vor-MY-dxX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3534.375" y="-485.91549295774649"/>
+            <point key="canvasLocation" x="5529.375" y="-485.91549295774649"/>
+        </scene>
+        <!--Event List Table View Controller-->
+        <scene sceneID="0Xt-SB-e9d">
+            <objects>
+                <tableViewController id="MoZ-3E-edF" userLabel="Event List Table View Controller" customClass="eventListTableViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jQJ-ZG-dc3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="eventListCell" rowHeight="60" id="0jr-xY-Imc" customClass="eventListCell" customModule="Events" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0jr-xY-Imc" id="zF8-9j-3VH">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="szC-95-Hyd">
+                                            <rect key="frame" x="20" y="0.0" width="223" height="45"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="eventListNameLabel" destination="szC-95-Hyd" id="boG-G5-Vdf"/>
+                                    <segue destination="0wm-mI-3hH" kind="show" identifier="eventListSelected" id="DYh-GV-cu8"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MoZ-3E-edF" id="otm-jV-J7t"/>
+                            <outlet property="delegate" destination="MoZ-3E-edF" id="aoT-8C-GDc"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="dnT-GE-6Zy">
+                        <barButtonItem key="leftBarButtonItem" title="Go Online!" style="done" id="opU-0j-yNC"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="g5e-RV-bKf"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E0b-AK-gHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3814" y="-486"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="4XM-si-uWy">
+        <scene sceneID="FdT-QU-2vD">
             <objects>
-                <navigationController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="mgo-nb-ix1" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zs3-sM-OTD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9rI-sp-RcL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7hv-VB-jDP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="0wm-mI-3hH" kind="relationship" relationship="rootViewController" id="wBE-0q-uIE"/>
+                        <segue destination="MoZ-3E-edF" kind="relationship" relationship="rootViewController" id="pPn-sc-C38"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Dg-2p-86a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eL7-f4-OgD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1820.625" y="-484.85915492957747"/>
+            <point key="canvasLocation" x="3009" y="-487"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

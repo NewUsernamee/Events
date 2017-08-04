@@ -23,6 +23,7 @@ class CreateEventViewController : UIViewController,UIPickerViewDelegate,UIPicker
     var event : Event?
     var eventArr = [Event]()
     
+
     //regular
     var pickerArr = ["Monday",
                      "Tuesday",
@@ -42,7 +43,9 @@ class CreateEventViewController : UIViewController,UIPickerViewDelegate,UIPicker
     @IBOutlet weak var startTimePicker: UIPickerView!
     
     @IBOutlet weak var endTimePicker: UIPickerView!
-
+    
+    @IBOutlet weak var createButton: UIButton!
+    
     // setting picker view
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     {
@@ -103,6 +106,7 @@ class CreateEventViewController : UIViewController,UIPickerViewDelegate,UIPicker
     
     override func viewWillAppear(_ animated: Bool)
     {
+        
         if(changeEvent) //changing event
         {
             eventArr = CoreDataHelper.getEventFromData()
@@ -117,6 +121,8 @@ class CreateEventViewController : UIViewController,UIPickerViewDelegate,UIPicker
         else
         {
             navigationItem.title = "Create Event"
+            endTimePicker.selectRow(6, inComponent: 0, animated: true)
+            endTime = 6
         }
     }
     
